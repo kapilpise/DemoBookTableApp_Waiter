@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="1">
+
+
+        <LinearLayout
+            android:id="@+id/layout_item_desc"
+            android:layout_width="0dp"
+            android:layout_gravity="left"
+            android:gravity="center_vertical"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:layout_weight="0.6"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/order_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order Name"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/table_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Table No"
+                android:visibility="gone"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/total_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rs. 8,999"
+                android:textColor="#4CAF50"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/accept"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/accept"
+                android:padding="5dp"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:background="@drawable/textview_border"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.2" />
+
+            <TextView
+                android:id="@+id/reject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/reject"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:background="@drawable/textview_red_border"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.2" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
+</LinearLayout>
+

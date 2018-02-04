@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:weightSum="3">
+
+        <ImageView
+            android:id="@+id/dish_image"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/layout_item_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_weight="1.8"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dish_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Denim Shirt"
+                android:textSize="10dp"
+                android:textStyle="bold" />
+
+            <LinearLayout android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/dish_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rs. 8,999"
+                    android:textColor="#4CAF50"
+                    android:textSize="12dp" />
+                <TextView
+                    android:id="@+id/tvTotalOfItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Menu Price: "
+                    android:layout_marginLeft="16dp"
+                    android:textColor="#4CAF50"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtRemove"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@android:color/holo_red_light"
+                    android:gravity="center"
+                    android:text="-"
+                    android:textColor="@color/gen_white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtQuantity"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="#f1f1f1"
+                    android:gravity="center"
+                    android:maxLength="2"
+                    android:maxLines="1"
+                    android:minLines="1"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtAdd"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@android:color/holo_green_dark"
+                    android:gravity="center"
+                    android:text="+"
+                    android:textColor="@color/gen_white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
+</LinearLayout>
+
