@@ -13,6 +13,8 @@ import android.widget.TextView;
 import com.smartdatainc.activities.OrderDetailsActivity;
 import com.smartdatainc.dataobject.OrderItemDetail;
 import com.smartdatainc.fudowaiter.R;
+import com.smartdatainc.utils.Constants;
+import com.smartdatainc.utils.Utility;
 
 import java.util.ArrayList;
 
@@ -50,12 +52,18 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.MyVi
         holder.dishName.setText(orderItemDetail.getDishName());
         holder.dishPrice.setText("$" + orderItemDetail.getDishUnitPrice());
 
-        if (position % 2 == 0) {
-            holder.mImageView.setBackgroundResource(R.drawable.restaurant_first);
-        } else {
-            holder.mImageView.setBackgroundResource(R.drawable.restaurant_second);
-        }
+//        if (position % 2 == 0) {
+//            holder.mImageView.setBackgroundResource(R.drawable.restaurant_first);
+//        } else {
+//            holder.mImageView.setBackgroundResource(R.drawable.restaurant_second);
+//        }
 
+        if (!orderItemDetail.getImagePath().isEmpty()) {
+            String url= Constants.WebServices.WS_IMAGE_BASE_URL+orderItemDetail.getImagePath().split("/Content/")[1];
+            Utility.loadImageFromUrl(context, holder.mImageView, android.R.color.darker_gray,url);
+        } else {
+            Utility.loadImageDrawable(context, holder.mImageView, R.drawable.restaurant_first);
+        }
         holder.tvQuantity.setText("" + orderItemDetail.getQuantity());
         float totalPrice = 0;
         if (orderItemDetail.getQuantity() > 0) {
@@ -88,9 +96,7 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.MyVi
                     notifyDataSetChanged();
                     if (iUpdatePrice != null)
                         iUpdatePrice.updateTotalPrice();
-                }
-
-                else if (orderItemDetail.getQuantity() == 1) {
+                } else if (orderItemDetail.getQuantity() == 1) {
                     showRemoveDialog(orderItemDetail);
                 }
 

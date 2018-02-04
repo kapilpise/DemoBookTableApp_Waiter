@@ -22,6 +22,7 @@ public class Constants {
      */
     public static class WebServices {
 
+        public static String WS_IMAGE_BASE_URL = "http://108.168.203.227:9100/Content/";
         public static String WS_BASE_URL = "http://108.168.203.227/bookmytable/api/Hotel/";
         public static final String WS_USER_AUTHENTICATION =  "GetUserDetailsWithSuccesLogin";
         public static final String WS_WAITER_LIST =  "GetOrderDetailsForApproval";

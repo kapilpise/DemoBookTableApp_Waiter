@@ -22,6 +22,17 @@ public class OrderItemDetail implements Serializable {
     @Expose
     private Integer customerID;
 
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
+
+    @SerializedName("imagePath")
+    @Expose
+    private String imagePath;
     public Integer getCustomerID() {
         return customerID;
     }

@@ -11,6 +11,7 @@ import android.os.IBinder;
 import android.provider.Settings;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.google.gson.Gson;
@@ -30,10 +31,7 @@ import java.text.DecimalFormat;
 
 import com.smartdatainc.interfaces.DialogActionCallback;
 import com.smartdatainc.fudowaiter.R;
-
-
-
-
+import com.squareup.picasso.Picasso;
 
 
 /**
@@ -496,4 +494,17 @@ public class Utility {
         editorObj.commit();
     }
 
+    public static void loadImageDrawable(Context context, ImageView mImageView, int restaurant_first) {
+        Picasso.with(context)
+                .load(restaurant_first)
+                .into(mImageView);
+    }
+
+    public static void loadImageFromUrl(Context context, ImageView mImageView, int darker_gray, String imagePath) {
+        Picasso.with(context)
+                .load(imagePath)
+                .error(darker_gray)
+                .placeholder(darker_gray)
+                .into(mImageView);
+    }
 }
