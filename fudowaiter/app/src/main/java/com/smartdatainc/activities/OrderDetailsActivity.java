@@ -149,8 +149,7 @@ public class OrderDetailsActivity extends BaseActivity implements OrderListAdapt
 //            else
 //                total += (orderItemDetails.get(i).getDishUnitPrice());
         }
-
-        tvTotalOrderPrice.setText("Total Order Price: $ " + total);
+        tvTotalOrderPrice.setText("Total: $ " + String.format("%.2f", total));
 
     }
 

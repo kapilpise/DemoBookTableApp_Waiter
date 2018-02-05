@@ -5,16 +5,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.smartdatainc.dataobject.AppInstance;
+import com.smartdatainc.dataobject.User;
+import com.smartdatainc.fudowaiter.R;
 import com.smartdatainc.interfaces.DialogActionCallback;
 import com.smartdatainc.interfaces.ServiceRedirection;
-import com.smartdatainc.dataobject.User;
 import com.smartdatainc.managers.LoginManager;
-import com.smartdatainc.fudowaiter.R;
 import com.smartdatainc.utils.Constants;
 import com.smartdatainc.utils.SharedPreferenceUtils;
 import com.smartdatainc.utils.Utility;
@@ -221,6 +219,7 @@ public class LoginActivity extends AppActivity implements ServiceRedirection {
             SharedPreferenceUtils.setIsLogin(this, true);
             Intent intentObj = new Intent(this, WaiterDashBoard.class);
             startActivity(intentObj);
+            finish();
         }
     }
 
